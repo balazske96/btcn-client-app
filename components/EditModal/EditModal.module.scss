@@ -1,0 +1,41 @@
+.modalBody {
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+
+    .bonusTitle {
+        margin: 0 0 -15px 20px;
+    }
+
+    .CKEditorContainer {
+        margin: 0 0 0 20px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        position: relative;
+
+        div {
+            flex-direction: column;
+        }
+    }
+
+    .updatingLoaderContainer {
+        background-color: transparent;
+        position: absolute;
+        z-index: 50;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.backdrop {
+    z-index: 60 !important;
+}
