@@ -32,3 +32,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# DB
+/data/
+
+# Strapi build
+/strapi/

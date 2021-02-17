@@ -17,7 +17,7 @@ export default function CasinosTable() {
 
     // Fetch casinos and stop loading
     React.useEffect(() => {
-        client(`/casino`)
+        client(`/casinos`)
             .then(res => {
                 setCasinos(res.data);
             })
@@ -42,7 +42,6 @@ export default function CasinosTable() {
 
                             <div className={styles.table}>
                                 <div className={styles.tableHeaderRow}>
-                                    {/*<div className={styles.tableHeaderCell}>Rank</div>*/}
                                     <div className={styles.tableHeaderCell}>Casino</div>
                                     <div className={styles.tableHeaderCell}>Rating</div>
                                     <div className={styles.tableHeaderCell}>Key Features</div>
@@ -60,7 +59,7 @@ export default function CasinosTable() {
 
                                             <div className={styles.tableCell}>
                                                 <img className={styles.casinoProfilePicture} alt="casino image"
-                                                     src={casino.image_link || `${process.env.CASINO_IMAGE_PLACEHOLDER}/casino-image-placeholder.jpg`}/>
+                                                     src={process.env.API_BASE_URL + casino.image.formats.thumbnail.url}/>
                                             </div>
                                             <div className={`${styles.tableCell} ${styles.starsContainer}`}>
                                                 <ReactStars
@@ -73,10 +72,10 @@ export default function CasinosTable() {
                                                 />
                                             </div>
                                             <div className={`${styles.tableCell} ${styles.keyFeaturesRowsContainer}`}>
-                                                {casino.key_features.map(feature => (
+                                                {casino.key_features.map(record => (
                                                     <div className={styles.featureRow}>
                                                         <CheckedIcon/>
-                                                        {feature.name}
+                                                        {record.feature}
                                                     </div>)
                                                 )}
                                             </div>

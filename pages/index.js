@@ -4,9 +4,9 @@ import Navbar from '../components/Navbar/Navbar';
 import styles from '../styles/Home.module.scss';
 import AwardCardsSection from '../components/AwardCardsSection/AwardCardsSection';
 import CasinosTable from '../components/CasinosTable/CasinosTable';
-// Comment to trigger deploy
+import client from '../utils/axiosConfig';
 
-export default function Home() {
+export default function Home({casinos}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -16,8 +16,20 @@ export default function Home() {
       </Head>
       <Navbar />
       <Introduction />
-      <AwardCardsSection />
+      <AwardCardsSection topCasinos={casinos.slice(0,2)}/>
       <CasinosTable />
     </div>
   )
 }
+
+export async function getStaticProps() {
+  const casinos = await client(`/casinos`).then(res => res.data);
+ 
+  return {
+      props: {
+        casinos: casinos,
+      },
+      revalidate: 10
+  }
+}
+ 

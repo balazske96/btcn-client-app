@@ -12,7 +12,7 @@ export default function AwardCard({place, image, rate, keyFeatures, description,
                 <div className={styles.placeContainer}>{place}</div>
                 <Trophy className={styles.trophyIcon}/>
                 <img className={styles.casinoProfilePicture} alt="casino image"
-                     src={image || `${process.env.CASINO_IMAGE_PLACEHOLDER}/casino-image-placeholder.jpg`}/>
+                     src={process.env.API_BASE_URL + image}/>
                 <div className={styles.starsContainer}>
                     <ReactStars
                         count={5}
@@ -24,10 +24,10 @@ export default function AwardCard({place, image, rate, keyFeatures, description,
                     />
                 </div>
                 <div className={styles.keyFeaturesContainer}>
-                    {keyFeatures.map(feature => (
+                    {keyFeatures.map(record => (
                         <div className={styles.featureRow}>
                             <CheckedIcon/>
-                            {feature.name}
+                            {record.feature}
                         </div>)
                     )}
                 </div>

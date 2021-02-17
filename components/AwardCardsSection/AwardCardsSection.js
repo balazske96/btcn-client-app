@@ -2,29 +2,10 @@ import styles from './AwardCardsSection.module.scss';
 import AwardCard from '../AwardCard/AwardCard';
 import Loader from "react-loader-spinner";
 import React from "react";
-import client from '../../utils/axiosConfig';
 
-export default function AwardCardsSection() {
 
-    const [topCasinos, setTopCasinos] = React.useState([]);
-    const [isLoading, setIsLoading] = React.useState(true);
+export default function AwardCardsSection({topCasinos}) {
 
-    const loaderColor = "#162738";
-    const numberOfAwardCards = 3;
-
-    React.useEffect(() => {
-        client(`/casino?limit=${numberOfAwardCards}&page=0`)
-            .then(res => {
-                setTopCasinos(res.data);
-            })
-            .catch(err => {
-
-            })
-            .finally(() => setIsLoading(false));
-    }, [])
-
-    if (isLoading)
-        return <Loader type="ThreeDots" color={loaderColor} height={80} width={80}/>
 
     return (
         <div className={styles.container} id='awards'>
@@ -38,7 +19,7 @@ export default function AwardCardsSection() {
                         return (
                             <AwardCard
                                 key={index}
-                                image={casino.image_link}
+                                image={casino.image.formats.thumbnail.url}
                                 place={casino.rank}
                                 rate={casino.rating}
                                 keyFeatures={casino.key_features}
@@ -52,3 +33,4 @@ export default function AwardCardsSection() {
         </div>
     )
 }
+
