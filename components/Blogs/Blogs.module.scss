@@ -1,0 +1,101 @@
+@import "../../styles/variables.scss";
+
+.container {
+  flex-direction: column;
+
+  .headerBanner {
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      $summary-card-header-color-gradient-start,
+      $summary-card-header-color-gradient-end
+    );
+    max-height: 80px;
+    justify-content: center;
+    padding: 20px 0;
+
+    .logo {
+      display: row;
+      align-items: center;
+
+      :not(:last-child) {
+        margin-right: 5px;
+      }
+
+      .imageContainer {
+        .bitcoinLogo {
+          width: 38px;
+        }
+      }
+
+      .logoName {
+        color: $white;
+      }
+    }
+  }
+
+  .textTitleContainer {
+    margin: 30px 0;
+    padding-left: 40px;
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  p {
+    padding: 0 40px;
+  }
+
+  .carouselContainer {
+    width: 80vw;
+    // padding: 0 100px;
+    flex-direction: row;
+
+    margin: 80px auto;
+    display: block;
+    position: relative;
+
+    .leftArrow,
+    .rightArrow {
+      position: absolute;
+      top: 50%;
+      margin: 0;
+      padding: 0;
+      height: max-content;
+      width: auto;
+      
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .leftArrow {
+      left: 0;
+      transform: translate(-50%);
+    }
+
+    .rightArrow {
+      right: 0;
+      transform: translate(100%);
+    }
+
+    // React slick magic to provide same height for cards
+    > div {
+      display: block;
+      height: 100%;
+      > div {
+        height: 100%;
+        > div {
+          height: 100%;
+          > div {
+            height: 100%;
+            > div {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

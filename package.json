@@ -19,7 +19,9 @@
     "react-dom": "17.0.1",
     "react-loader-spinner": "^3.1.14",
     "react-rating-stars-component": "^2.2.0",
+    "react-slick": "^0.28.0",
     "sass": "^1.30.0",
+    "slick-carousel": "^1.8.1",
     "suneditor-react": "^2.15.0"
   },
   "devDependencies": {

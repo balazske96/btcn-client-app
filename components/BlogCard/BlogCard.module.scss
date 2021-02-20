@@ -1,0 +1,60 @@
+@import "../../styles/variables.scss";
+
+.container {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+
+  .body {
+    flex-direction: column;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 3px 3px 7px rgba(#000, 0.3);
+
+    .cover {
+      background-size: cover;
+      min-height: 200px;
+      width: 100%;
+    }
+
+    .titleContainer {
+      width: 100%;
+      padding: 0 20px;
+      margin: 20px 0;
+
+      h4 {
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+    }
+
+    p {
+      margin: 0 0 20px 0;
+      padding: 0 20px;
+    }
+
+    .readMoreButtonContainer {
+      width: 100%;
+      padding: 0 20px;
+      margin: auto 0 20px 0;
+      
+
+      .readMoreButton {
+        color: $yellow;
+        font-weight: 700;
+        align-items: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        .yellowSquare {
+          width: 50px;
+          border-bottom: 2px solid $yellow;
+          margin: 0 10px 0 0;
+        }
+      }
+    }
+  }
+}
