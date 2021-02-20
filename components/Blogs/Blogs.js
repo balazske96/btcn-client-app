@@ -66,6 +66,7 @@ export default function Blogs({ blogs }) {
                                 image={blog.cover.url}
                                 description={blog.description}
                                 text={blog.text}
+                                slug={blog.slug}
                             />
                         ))
                     }

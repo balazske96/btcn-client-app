@@ -9,7 +9,7 @@ export default function SummaryCard({ title, text, positivums, negativums, slug 
 
     const router = useRouter()
 
-    const readMoreClicked = () => router.push(slug);
+    const readMoreClicked = () => router.push(`/casino/${slug}`);
 
     return (
         <div className={styles.container}>

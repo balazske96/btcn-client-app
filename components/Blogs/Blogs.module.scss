@@ -3,6 +3,7 @@
 .container {
   flex-direction: column;
 
+
   .headerBanner {
     width: 100%;
     background-image: linear-gradient(
@@ -36,7 +37,7 @@
 
   .textTitleContainer {
     margin: 30px 0;
-    padding-left: 40px;
+    padding: 0 80px;
 
     h2 {
       font-size: 3rem;
@@ -44,7 +45,7 @@
   }
 
   p {
-    padding: 0 40px;
+    padding: 0 80px;
   }
 
   .carouselContainer {
