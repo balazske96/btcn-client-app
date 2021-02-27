@@ -173,18 +173,25 @@
   margin: 0 auto;
   align-items: center;
   height: max-content;
+  color: white;
+  flex-direction: row;
+
 
   &:hover {
     cursor: pointer;
   }
 
-  a {
-    color: white;
-    margin-right: 5px;
+  > :first-child {
     margin-top: -3px;
   }
 
-  :nth-child(2) {
+  // a {
+  //   color: white;
+  //   margin-right: 5px;
+  //   margin-top: -3px;
+  // }
+
+  svg {
     transform: rotate(-90deg);
     color: white;
   }

@@ -100,11 +100,13 @@ export default function CasinosTable() {
 
 export function GoToCasinoButton({ website }) {
     return (
-        <div className={styles.goToCasinoButton}>
-            <a href={website} target="_blank" rel="external">
-                visit site
-            </a>
-            <ExpandMoreIcon fontSize='small' />
-        </div>
+        <a href={website} target="_blank" rel="external">
+            <div className={styles.goToCasinoButton}>
+                <div>
+                    visit site
+                </div>
+                <ExpandMoreIcon fontSize='small' />
+            </div>
+        </a>
     )
 }
