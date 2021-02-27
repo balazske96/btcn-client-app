@@ -18,7 +18,7 @@ export default function Navbar() {
             <Link href="/"><li>HOME</li></Link>
             <Link href="/summaries"><li>REVIEW</li></Link>
             <Link href="#"><li>GAMBLING</li></Link>
-            <Link href="#"><li>BLOG</li></Link>
+            <Link href="#blog"><li>BLOG</li></Link>
             <Link href="#"><li>ABOUT US</li></Link>
             <Link href="#"><li className={styles.buttonListElement}>CONTACT</li></Link>
         </ul>
@@ -53,7 +53,7 @@ export default function Navbar() {
                         <a>Help</a>
                     </Link>
                     <VerticalDivider color='#F99400' />
-                    <Link href='/'>
+                    <Link href='/terms-and-conditions   '>
                         <a>Terms and conditions</a>
                     </Link>
                 </div>

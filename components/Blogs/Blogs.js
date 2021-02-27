@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
-export default function Blogs({ blogs }) {
+export default function Blogs({ blogs, text }) {
 
     const carouselSettings = {
         dots: false,
@@ -29,7 +29,7 @@ export default function Blogs({ blogs }) {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="blog">
             <div className={styles.headerBanner}>
                 <div className={styles.logo}>
                     <div className={styles.imageContainer}>
@@ -39,21 +39,7 @@ export default function Blogs({ blogs }) {
                     <div className={styles.logoName}>BITCOINCASINOLISTS</div>
                 </div>
             </div>
-            <div className={styles.textTitleContainer}>
-                <h2>
-                    Header
-                </h2>
-            </div>
-            <p className={styles.text}>
-                Proin a nulla arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas pretium mauris id mauris pellentesque, eget facilisis purus feugiat. Suspendisse potenti. Nam tempor blandit ornare. Suspendisse porttitor velit ex, nec elementum eros consequat non. Fusce at mauris eget lacus tempus posuere ac placerat eros. Praesent et laoreet quam. Proin et felis sodales felis porta congue ut a dolor. Quisque vel commodo neque, et pulvinar dolor.
-                <br />
-                <br />
-                Proin a nulla arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas pretium mauris id mauris pellentesque, eget facilisis purus feugiat. Suspendisse potenti. Nam tempor blandit ornare. Suspendisse porttitor velit ex, nec elementum eros consequat non. Fusce at mauris eget lacus tempus posuere ac placerat eros. Praesent et laoreet quam. Proin et felis sodales felis porta congue ut a dolor. Quisque vel commodo neque, et pulvinar dolor.ű
-                <br />
-                <br />
-                <br />
-                Proin a nulla arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas pretium mauris id mauris pellentesque, eget facilisis purus feugiat. Suspendisse potenti. Nam tempor blandit ornare. Suspendisse porttitor velit ex, nec elementum eros consequat non. Fusce at mauris eget lacus tempus posuere ac placerat eros. Praesent et laoreet quam. Proin et felis sodales felis porta congue ut a dolor. Quisque vel commodo neque, et pulvinar dolor.
-            </p>
+            <div className={styles.blogSectionText} dangerouslySetInnerHTML={{ __html: text }} />
             <div className={styles.carouselContainer}>
                 <div className={styles.leftArrow} onClick={leftArrowClicked}>
                     <ArrowBackIosIcon />

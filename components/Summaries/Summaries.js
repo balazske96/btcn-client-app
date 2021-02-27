@@ -10,7 +10,7 @@ export default function Summaries({ summaries }) {
 
 
     const renderSummaries = () => {
-        console.log(moreSummariesOpened);
+
         if (moreSummariesOpened) {
             return summaries.map(summary => (
                 <SummaryCard
@@ -18,13 +18,13 @@ export default function Summaries({ summaries }) {
                     title={summary.title}
                     negativums={[summary.negative_1, summary.negative_2, summary.negative_3]}
                     positivums={[summary.positive_1, summary.positive_2, summary.positive_3]}
-                    slug={summary.slug}
+                    slug={summary.link}
                 />
             ))
         }
 
         return summaries.map((summary, index) => {
-            console.log(index);
+
             if (index >= defaultNumberOfRenderedSummaries)
                 return;
             return (
@@ -33,7 +33,7 @@ export default function Summaries({ summaries }) {
                     title={summary.title}
                     negativums={[summary.negative_1, summary.negative_2, summary.negative_3]}
                     positivums={[summary.positive_1, summary.positive_2, summary.positive_3]}
-                    slug={summary.slug}
+                    slug={summary.link}
                 />
             )
         })

@@ -4,8 +4,15 @@ import Loader from "react-loader-spinner";
 import React from "react";
 
 
-export default function AwardCardsSection({topCasinos}) {
+export default function AwardCardsSection({ topCasinos }) {
 
+    const renderKeyFeatures = (casino) => {
+        let result = new Array();
+        result[0] = casino.key_feature_1;
+        result[1] = casino.key_feature_2;
+        result[2] = casino.key_feature_3;
+        return result;
+    }
 
     return (
         <div className={styles.container} id='awards'>
@@ -19,10 +26,10 @@ export default function AwardCardsSection({topCasinos}) {
                         return (
                             <AwardCard
                                 key={index}
-                                image={casino.image.formats.thumbnail.url}
+                                image={casino.image.url}
                                 place={casino.rank}
                                 rate={casino.rating}
-                                keyFeatures={casino.key_features}
+                                keyFeatures={renderKeyFeatures(casino)}
                                 description={casino.bonus}
                                 link={casino.link}
                             />

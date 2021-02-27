@@ -6,6 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import client from '../../utils/axiosConfig';
 import ReactStars from "react-rating-stars-component/dist/react-stars";
 import CheckedIcon from '../../assets/check.svg';
+import convertMarkdownToHtml from '../../utils/markdown';
 
 
 export default function CasinosTable() {
@@ -36,8 +37,8 @@ export default function CasinosTable() {
             <div className={styles.tableContainer}>
                 {
                     isLoading ? (
-                            <Loader type="ThreeDots" color={loaderColor} height={80} width={80}/>
-                        ) :
+                        <Loader type="ThreeDots" color={loaderColor} height={80} width={80} />
+                    ) :
                         (
 
                             <div className={styles.table}>
@@ -59,7 +60,7 @@ export default function CasinosTable() {
 
                                             <div className={styles.tableCell}>
                                                 <img className={styles.casinoProfilePicture} alt="casino image"
-                                                     src={process.env.API_BASE_URL + casino.image.formats.thumbnail.url}/>
+                                                    src={process.env.API_BASE_URL + casino.image.formats.thumbnail.url} />
                                             </div>
                                             <div className={`${styles.tableCell} ${styles.starsContainer}`}>
                                                 <ReactStars
@@ -72,18 +73,19 @@ export default function CasinosTable() {
                                                 />
                                             </div>
                                             <div className={`${styles.tableCell} ${styles.keyFeaturesRowsContainer}`}>
-                                                {casino.key_features.map(record => (
-                                                    <div className={styles.featureRow}>
-                                                        <CheckedIcon/>
-                                                        {record.feature}
-                                                    </div>)
-                                                )}
+                                                {
+                                                    [casino.key_feature_1, casino.key_feature_2, casino.key_feature_3].map(record => (
+                                                        <div className={styles.featureRow}>
+                                                            <CheckedIcon />
+                                                            {record}
+                                                        </div>)
+                                                    )}
                                             </div>
                                             <div className={styles.tableCell}>
-                                                <div dangerouslySetInnerHTML={{__html: casino.bonus}} className={styles.bonusTextContainer}/>
+                                                <div dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(casino.bonus) }} className={styles.bonusTextContainer} />
                                             </div>
                                             <div className={styles.tableCell}>
-                                                <GoToCasinoButton website={casino.link}/>
+                                                <GoToCasinoButton website={casino.link} />
                                             </div>
                                         </div>
                                     ))
@@ -96,13 +98,13 @@ export default function CasinosTable() {
     )
 }
 
-export function GoToCasinoButton({website}) {
+export function GoToCasinoButton({ website }) {
     return (
         <div className={styles.goToCasinoButton}>
             <a href={website} target="_blank" rel="external">
                 visit site
             </a>
-            <ExpandMoreIcon fontSize='small'/>
+            <ExpandMoreIcon fontSize='small' />
         </div>
     )
 }
