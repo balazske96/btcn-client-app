@@ -15,12 +15,9 @@ export default function Navbar() {
 
     const commonMenuContent = (
         <ul>
-            <Link href="/"><li>HOME</li></Link>
-            <Link href="/summaries"><li>REVIEW</li></Link>
-            <Link href="#"><li>GAMBLING</li></Link>
             <Link href="#blog"><li>BLOG</li></Link>
-            <Link href="#"><li>ABOUT US</li></Link>
-            <Link href="#"><li className={styles.buttonListElement}>CONTACT</li></Link>
+            <Link href="#casinos"><li>CASINOS</li></Link>
+            <Link href="#reviews"><li className={styles.buttonListElement}>REVIEW</li></Link>
         </ul>
     )
 

@@ -41,7 +41,7 @@ export default function Summaries({ summaries }) {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id='reviews'>
             <div className={styles.titleContainer}>
                 <h2>Short casino summaries</h2>
             </div>
