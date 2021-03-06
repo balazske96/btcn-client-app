@@ -42,6 +42,10 @@
             display: row;
             align-items: center;
 
+            &:hover {
+                cursor: pointer;
+            }
+
             :not(:last-child) {
                 margin-right: 5px;
             }

@@ -13,13 +13,20 @@ export default function Navbar() {
 
     const { isMobileView } = useWindowSize();
 
+    const handleLogoClick = () => {
+        location.reload();
+    }
+
     const commonMenuContent = (
         <ul>
-            <Link href="#blog"><li>BLOG</li></Link>
+            <li onClick={handleLogoClick}>HOME</li>
             <Link href="#casinos"><li>CASINOS</li></Link>
-            <Link href="#reviews"><li className={styles.buttonListElement}>REVIEW</li></Link>
+            <Link href="#reviews"><li>REVIEW</li></Link>
+            <Link href="#blog"><li>BLOG</li></Link>
+            <Link href="#about-us"><li className={styles.buttonListElement}>ABOUT US</li></Link>
         </ul>
     )
+
 
     if (isMobileView)
         return (
@@ -56,7 +63,7 @@ export default function Navbar() {
                 </div>
             </div>
             <div className={styles.lowerRow}>
-                <div className={styles.logo}>
+                <div className={styles.logo} onClick={handleLogoClick}>
                     <div className={styles.imageContainer}>
                         <BitcoinLogo className={styles.bitcoinLogo} />
                     </div>
