@@ -1,8 +1,11 @@
 @import "../../styles/variables.scss";
 
 .container {
+  max-width: $max-content-width;
+  margin: 0 auto;
   flex-direction: column;
   padding: 50px 60px;
+  
 
   .titleContainer {
     width: 100%;

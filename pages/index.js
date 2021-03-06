@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Introduction from '../components/Introduction/Introduction';
 import Navbar from '../components/Navbar/Navbar';
 import styles from '../styles/Home.module.scss';
@@ -8,21 +7,20 @@ import client from '../utils/axiosConfig';
 import Summaries from '../components/Summaries/Summaries';
 import Blogs from '../components/Blogs/Blogs';
 import convertMarkdownToHtml from '../utils/markdown';
+import BlueBanner from '../components/BlueBanner/BlueBanner';
+import Footer from '../components/Footer/Footer';
 
-export default function Home({ casinos, summaries, blogs, blogSectionText }) {
+export default function Home({ casinos, summaries, blogs, blogSectionText, bannerYouTubeLink }) {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Bitcoin Casinos</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Navbar />
-      <Introduction />
+      <Introduction videoLink={bannerYouTubeLink} />
       <AwardCardsSection topCasinos={casinos.slice(0, 3)} />
       <CasinosTable />
       <Summaries summaries={summaries} />
+      <BlueBanner />
       <Blogs blogs={blogs} text={convertMarkdownToHtml(blogSectionText)} />
+      <Footer />
     </div>
   )
 }
@@ -39,7 +37,8 @@ export async function getStaticProps() {
       casinos: casinos,
       summaries: summaries,
       blogs: blogs,
-      blogSectionText: homePage.blog_section_text
+      blogSectionText: homePage.blog_section_text,
+      bannerYouTubeLink: homePage.banner_youtube_link
     },
     revalidate: 10
   }

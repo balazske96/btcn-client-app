@@ -7,7 +7,7 @@ import { GoToCasinoButton } from "../CasinosTable/CasinosTable";
 import convertMarkdownToHtml from '../../utils/markdown';
 
 export default function AwardCard({ place, image, rate, keyFeatures, description, link }) {
-    console.log(keyFeatures)
+
     return (
         <div className={styles.container}>
             <div className={styles.cardBody}>

@@ -2,39 +2,8 @@
 
 .container {
   flex-direction: column;
-  
-
-  .headerBanner {
-    width: 100%;
-    background-image: linear-gradient(
-      to right,
-      $summary-card-header-color-gradient-start,
-      $summary-card-header-color-gradient-end
-    );
-    max-height: 80px;
-    justify-content: center;
-    padding: 20px 0;
-    margin-bottom: 30px;
-
-    .logo {
-      display: row;
-      align-items: center;
-
-      :not(:last-child) {
-        margin-right: 5px;
-      }
-
-      .imageContainer {
-        .bitcoinLogo {
-          width: 38px;
-        }
-      }
-
-      .logoName {
-        color: $white;
-      }
-    }
-  }
+  max-width: $max-content-width;
+  margin: 0 auto;
 
   .blogSectionText {
     flex-direction: column;
@@ -42,12 +11,28 @@
     padding: 0 10%;
   }
 
+  .sliderTitleContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 10%;
+
+    p {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 3rem;
+
+      // the p-tag above is a bit like being more outward
+      margin-left: -3px;
+    }
+  }
+
   .carouselContainer {
     width: 80vw;
-    // padding: 0 100px;
     flex-direction: row;
 
-    margin: 80px auto;
+    margin: 40px auto 80px auto;
     display: block;
     position: relative;
 

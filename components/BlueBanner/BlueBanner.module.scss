@@ -1,0 +1,33 @@
+@import "../../styles/variables.scss";
+
+.headerBanner {
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    $summary-card-header-color-gradient-start,
+    $summary-card-header-color-gradient-end
+  );
+  max-height: 80px;
+  justify-content: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+
+  .logo {
+    display: row;
+    align-items: center;
+    
+    :not(:last-child) {
+      margin-right: 5px;
+    }
+
+    .imageContainer {
+      .bitcoinLogo {
+        width: 38px;
+      }
+    }
+
+    .logoName {
+      color: $white;
+    }
+  }
+}

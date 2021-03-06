@@ -1,7 +1,5 @@
 import React from 'react';
-import BitcoinLogo from '../../public/bitcoin.svg';
 import BlogCard from '../BlogCard/BlogCard';
-import VerticalDivider from '../VerticalDivider/VerticalDivider';
 import styles from './Blogs.module.scss';
 import Slider from "react-slick";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -30,16 +28,11 @@ export default function Blogs({ blogs, text }) {
 
     return (
         <div className={styles.container} id="blog">
-            <div className={styles.headerBanner}>
-                <div className={styles.logo}>
-                    <div className={styles.imageContainer}>
-                        <BitcoinLogo className={styles.bitcoinLogo} />
-                    </div>
-                    <VerticalDivider color='#98A0A7' />
-                    <div className={styles.logoName}>BITCOINCASINOLISTS</div>
-                </div>
-            </div>
             <div className={styles.blogSectionText} dangerouslySetInnerHTML={{ __html: text }} />
+            <div className={styles.sliderTitleContainer}>
+                <p>READ SOME NEWS</p>
+                <h2>Our Blog & Updates</h2>
+            </div>
             <div className={styles.carouselContainer}>
                 <div className={styles.leftArrow} onClick={leftArrowClicked}>
                     <ArrowBackIosIcon />
