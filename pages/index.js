@@ -9,14 +9,16 @@ import Blogs from '../components/Blogs/Blogs';
 import convertMarkdownToHtml from '../utils/markdown';
 import BlueBanner from '../components/BlueBanner/BlueBanner';
 import Footer from '../components/Footer/Footer';
+import SecondIntroduction from '../components/SecondIntroduction/SecondIntroduction';
 
-export default function Home({ casinos, summaries, blogs, blogSectionText, bannerYouTubeLink }) {
+export default function Home({ casinos, summaries, blogs, blogSectionText, bannerYouTubeLink, secondaryIntroduction }) {
   return (
     <div className={styles.container}>
       <Navbar />
       <Introduction videoLink={bannerYouTubeLink} />
       <AwardCardsSection topCasinos={casinos.slice(0, 3)} />
       <CasinosTable />
+      <SecondIntroduction text={convertMarkdownToHtml(secondaryIntroduction)} />
       <Summaries summaries={summaries} />
       <BlueBanner />
       <Blogs blogs={blogs} text={convertMarkdownToHtml(blogSectionText)} />
@@ -38,7 +40,8 @@ export async function getStaticProps() {
       summaries: summaries,
       blogs: blogs,
       blogSectionText: homePage.blog_section_text,
-      bannerYouTubeLink: homePage.banner_youtube_link
+      bannerYouTubeLink: homePage.banner_youtube_link,
+      secondaryIntroduction: homePage.second_introduction
     },
     revalidate: 10
   }
