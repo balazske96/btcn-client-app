@@ -5,6 +5,7 @@ import ReactStars from "react-rating-stars-component";
 import CheckedIcon from "../../assets/check.svg";
 import { GoToCasinoButton } from "../CasinosTable/CasinosTable";
 import convertMarkdownToHtml from '../../utils/markdown';
+import greenTick from '../../public/green-tick.png'
 
 export default function AwardCard({ place, image, rate, keyFeatures, description, link }) {
 
@@ -28,8 +29,10 @@ export default function AwardCard({ place, image, rate, keyFeatures, description
                 <div className={styles.keyFeaturesContainer}>
                     {keyFeatures.map(record => (
                         <div className={styles.featureRow}>
-                            <CheckedIcon />
-                            {record}
+                          <img src={greenTick}/>
+                            <p>
+                                {record}
+                            </p>
                         </div>)
                     )}
                 </div>

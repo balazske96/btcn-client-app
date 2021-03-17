@@ -42,7 +42,7 @@
 
         .casinoProfilePicture {
             margin: 20px auto;
-            width: auto;
+            width: 150px;
             height: 150px;
         }
 
@@ -53,35 +53,40 @@
         .keyFeaturesContainer {
             width: 100%;
             margin: 0 0 20px 0;
+            padding: 0 10px;
+            flex-direction: row;
+            justify-content: space-evenly;
 
             .featureRow {
+                flex: 1;
                 flex-direction: row;
-                align-items: center;
+                align-items:center;
                 margin: 0 auto;
+                justify-content: flex-start;
                 text-transform: capitalize;
+                text-overflow: ellipsis;
 
-
-
-                //@include tablet-m {
-                //    font-size: 0.9rem;
-                //}
-
-                > :first-child {
-                    height: auto;
+                > img {
+                    height: 15px;
                     width: 15px;
-                    margin-right: 10px;
-
-                    //@include tablet-m {
-                    //    width: 10px;
-                    //}
+                    margin: 0 5px;
                 }
+
+                p {
+                    font-size: small;
+                    margin: 0;
+                    text-align: center;
+                }
+
             }
         }
 
         .bonusTextContainer {
             flex-direction: column;
             align-items: center;
+            padding: 0 20px;
             margin: 0 0 20px 0;
+            text-align: center;
 
             h1, h2, h3, h4, h5, h6 {
                 font-size: 1.5rem;
@@ -95,7 +100,7 @@
         }
 
         .goToButtonContainer {
-            margin: 0 0 20px 0;
+            margin: auto 0 20px 0;
         }
     }
 }

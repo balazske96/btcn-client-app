@@ -18,6 +18,7 @@ export default function Home({ casinos, summaries, blogs, blogSectionText, banne
       <Introduction videoLink={bannerYouTubeLink} />
       <AwardCardsSection topCasinos={casinos.slice(0, 3)} />
       <CasinosTable />
+      <BlueBanner />
       <SecondIntroduction text={convertMarkdownToHtml(secondaryIntroduction)} />
       <Summaries summaries={summaries} />
       <BlueBanner />

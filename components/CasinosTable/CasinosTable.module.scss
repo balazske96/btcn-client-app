@@ -95,11 +95,12 @@
             $size: 150px;
             width: $size;
             height: $size;
+            margin: 0 0 0 30px;
           }
 
           .featureRow {
             width: 100%;
-            padding: 0 0 0 35%;
+            padding: 0 0 0 0;
             justify-content: flex-start;
             text-transform: capitalize;
 
@@ -138,6 +139,24 @@
 
         .keyFeaturesRowsContainer {
           flex-direction: column;
+          justify-content: center;
+
+          .featureRow {
+            height: 100%;
+            align-items: center;
+
+            img {
+              height: 15px;
+              width: 15px;
+              margin: 0 10px
+            }
+
+            p {
+              margin:0;
+              text-align: center;
+              font-size: smaller;
+            }
+          }
 
           @include tablet-m {
             flex-direction: row;

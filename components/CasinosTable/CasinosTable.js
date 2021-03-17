@@ -7,7 +7,7 @@ import client from '../../utils/axiosConfig';
 import ReactStars from "react-rating-stars-component/dist/react-stars";
 import CheckedIcon from '../../assets/check.svg';
 import convertMarkdownToHtml from '../../utils/markdown';
-
+import greenTick from '../../public/green-tick.png'
 
 export default function CasinosTable() {
 
@@ -76,8 +76,10 @@ export default function CasinosTable() {
                                                 {
                                                     [casino.key_feature_1, casino.key_feature_2, casino.key_feature_3].map(record => (
                                                         <div className={styles.featureRow}>
-                                                            <CheckedIcon />
-                                                            {record}
+                                                            <img src={greenTick} />
+                                                            <p>
+                                                                {record}
+                                                            </p>
                                                         </div>)
                                                     )}
                                             </div>
