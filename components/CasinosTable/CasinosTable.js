@@ -33,7 +33,7 @@ export default function CasinosTable() {
 
     return (
         <div className={styles.container} id="casinos">
-            <h2>Best Bitcoin casino sites TOP 50 list</h2>
+            <h2>Best Ranked Bitcoin Casinos of this Month.</h2>
             <div className={styles.tableContainer}>
                 {
                     isLoading ? (

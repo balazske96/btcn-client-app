@@ -11,11 +11,12 @@ export default function Introduction({ videoLink }) {
         <div className={styles.container} id='introduction'>
             <div className={styles.textContainer}>
                 <div className={styles.text}>
-                    <h2>Best Bitcoin Casino Sites - 2020</h2>
-                    <h4>Your guide to crypto casino sites!</h4>
-                    <p>Check out our reviewed, tested, carefully selected list of the most
-                        trustworthy Bitcoin casinos in 2020.<br />We won and lost on all of these sites so you don't have
-                        to.
+                    <h2>Your Complete Bitcoin Casino Guide </h2>
+                    {/* <h4>Your guide to crypto casino sites!</h4> */}
+                    <p>Find the best and most trusted bitcoin casinos,
+                        and the best bitcoin casino bonus offers, reviewed and listed.
+                        Our Bitcoin Casino Lists will give you all the information needed
+                        to start your journey into this fast growing market of crypto currency entertainment!
                     </p>
                 </div>
             </div>
@@ -23,7 +24,7 @@ export default function Introduction({ videoLink }) {
                 <iframe src={videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div className={styles.arrowContainer} onClick={() => goToId('casinos')}>
-                <p>SHOW AVAILABLE PROMOTIONS</p>
+                <p>VIEW LIST</p>
                 <div className={styles.arrow}>
                     <ExpandMoreIcon fontSize='large' />
                 </div>
